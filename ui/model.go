@@ -18,7 +18,7 @@ const (
 	sectionCount
 )
 
-var sectionNames = []string{"about", "experience", "links"}
+var sectionNames = []string{"about", "projects", "links"}
 
 // Model is the root Bubbletea model.
 type Model struct {
@@ -107,7 +107,7 @@ func (m Model) body(w int) string {
 	var contentStr string
 	switch m.active {
 	case sectionAbout:
-		contentStr = lipgloss.NewStyle().Width(contentW).Render(content.About)
+		contentStr = m.aboutBody(contentW)
 	case sectionExperience:
 		contentStr = m.experienceBody(contentW)
 	case sectionLinks:
@@ -122,6 +122,38 @@ func (m Model) body(w int) string {
 	return lipgloss.NewStyle().Padding(1, 2).Render(raw)
 }
 
+func (m Model) aboutBody(w int) string {
+	var sb strings.Builder
+	sb.WriteString(lipgloss.NewStyle().Width(w).Render(content.About))
+	sb.WriteString("\n\n")
+
+	sb.WriteString(labelStyle.Render("EXPERIENCE") + "\n")
+	for i, job := range content.Experience {
+		if i > 0 {
+			sb.WriteString("\n")
+		}
+		sb.WriteString("  " + labelStyle.Render(job.Title) + "\n")
+		sb.WriteString("  " + hintStyle.Render(
+			fmt.Sprintf("%s  ·  %s  ·  %s", job.Company, job.Period, job.Location),
+		) + "\n")
+		for _, b := range job.Bullets {
+			sb.WriteString("    · " + b + "\n")
+		}
+	}
+	sb.WriteString("\n")
+
+	sb.WriteString(labelStyle.Render("SKILLS") + "\n")
+	for _, skill := range content.Skills {
+		sb.WriteString("  " + labelStyle.Render(skill.Title) + "\n")
+		for _, ex := range skill.Examples {
+			sb.WriteString("    · " + ex + "\n")
+		}
+	}
+
+	return lipgloss.NewStyle().Width(w).Render(sb.String())
+}
+
+// Experience page todo: rebrand to projects
 func (m Model) experienceBody(w int) string {
 	var sb strings.Builder
 	for i, job := range content.Experience {

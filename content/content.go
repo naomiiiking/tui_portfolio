@@ -16,8 +16,6 @@ type Job struct {
 	Location string
 	Bullets  []string
 }
-
-// Experience lists your roles, newest first.
 var Experience = []Job{
 	{
 		Title:    "AI Engineer",
@@ -27,6 +25,41 @@ var Experience = []Job{
 		Bullets: []string{
 			"Something you built or led",
 			"Another thing worth mentioning",
+		},
+	},
+}
+
+type Skill struct {
+	Title    string
+	Examples []string
+}
+
+var Skills = []Skill{
+	{
+		Title: "AI Development",
+		Examples: []string{
+			"LLMs: Fine tuning, orchestraction, deployment locally and on cloud, Ollama, Hugging Face",
+			"AI Frameworks: Langraph, AI SDK, Claude/OpenAI SDK",
+			"RAG: Vector search pipelines with Chroma, FAISS, PGVector, AWS Bedrock",
+			"MCP: RBAC tool usage through OAuth 2 and OIDC",
+			"ML: Sckitlearn, PyTorch",
+		},
+	},
+	{
+		Title: "Software engineering",
+		Examples: []string{
+			"Programming: Python, Typescript, Go, SQL",
+			"Servers: Express.js, Bun",
+			"Chat: ChatSDK, Bolt",
+			"Integrations: Fast API, webhooks",
+		},
+	},
+	{
+		Title: "Infrastructure",
+		Examples: []string{
+			"Cloud Compute: AWS, VPS hosting, Neoclouds, Google Cloud Services",
+			"Containerisation: Docker, Kubernetes, ArgoCD",
+			"GitOps: Terraform, CI/CD",
 		},
 	},
 }
@@ -80,7 +113,6 @@ const rawPortrait =
 .....:*%*-....        .::. ..  :--:::.:.   ...  :*##*+:................
 .............       .:::::. ...---::.....  .... :*##*=:................`
 
-// Portrait is the ASCII art image; the top 15 rows are cleaned so only dots appear there.
 var Portrait = func() string {
 	lines := strings.Split(rawPortrait, "\n")
 	return strings.Join(lines, "\n")
