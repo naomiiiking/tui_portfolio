@@ -94,16 +94,31 @@ func (m Model) tabBar() string {
 }
 
 func (m Model) body(w int) string {
+	const portraitW = 74
+	const gap = 2
 	innerW := w - 4
-	var raw string
+	showPortrait := innerW >= portraitW+gap+30
+
+	contentW := innerW
+	if showPortrait {
+		contentW = innerW - portraitW - gap
+	}
+
+	var contentStr string
 	switch m.active {
 	case sectionAbout:
-		raw = lipgloss.NewStyle().Width(innerW).Render(content.About)
+		contentStr = lipgloss.NewStyle().Width(contentW).Render(content.About)
 	case sectionExperience:
-		raw = m.experienceBody(innerW)
+		contentStr = m.experienceBody(contentW)
 	case sectionLinks:
-		raw = m.linksBody(innerW)
+		contentStr = m.linksBody(contentW)
 	}
+
+	if !showPortrait {
+		return lipgloss.NewStyle().Padding(1, 2).Render(contentStr)
+	}
+	portrait := lipgloss.NewStyle().Width(portraitW).Render(content.Portrait)
+	raw := lipgloss.JoinHorizontal(lipgloss.Top, portrait, strings.Repeat(" ", gap), contentStr)
 	return lipgloss.NewStyle().Padding(1, 2).Render(raw)
 }
 

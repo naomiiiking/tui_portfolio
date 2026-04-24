@@ -13,7 +13,7 @@ A personal SSH terminal website — people connect with `ssh <hostname>` and get
 go run .
 
 # Connect to local server (in a second terminal)
-ssh localhost -p 2222
+ssh localhost -p 22
 
 # Build binary
 go build -o terminal-website .
