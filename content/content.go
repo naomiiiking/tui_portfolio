@@ -4,21 +4,14 @@ import "strings"
 
 const Name = "NAOMIKING.SSH"
 
-const Title = `
-     __        *             _                 *     
+const Title = 
+`    __        *             _                 *     
   /\ \ \__ _  ___  _ __ ___ (_)       *  _         *    
- /  \/ / _` |/ _ \| '_ ` _ \| |     /\ /(_)_ __   __ _ 
-/ /\  / (_| | (_) | | | | | | |    / //_/ | '_ \ / _` |
+ /  \/ / _' |/ _ \| '_ ' _ \| |     /\ /(_)_ __   __ _
+/ /\  / (_| | (_) | | | | | | |    / //_/ | '_ \ / _' |
 \_\ \/ \__,_|\___/|_| |_| |_|_|   / __ \| | | | | (_| |
 	    *					*     \/  \/|_|_| |_|\__, |
-				   *					*		  |___/ 
-`
-       _             
-  /\ /(_)_ __   __ _
- / //_/ | '_ \ / _` |
-/ __ \| | | | | (_| |
-\/  \/|_|_| |_|\__, |
-			    |___/ 
+				   *					*		  |___/ `
 // About is your bio. Use \n for paragraph breaks.
 const About = `Founding engineer for the AI Solutions team at Goodnotes. Modernising workflows and building internal, AI native applications for engineers, designers, insights and more.`
 
