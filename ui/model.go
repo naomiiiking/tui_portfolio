@@ -60,7 +60,7 @@ func (m Model) View() string {
 	w := m.width
 	div := divStyle.Render(strings.Repeat("─", w))
 
-	return strings.Join([]string{
+	view := strings.Join([]string{
 		m.header(w),
 		div,
 		m.tabBar(),
@@ -69,6 +69,7 @@ func (m Model) View() string {
 		div,
 		m.footer(),
 	}, "\n")
+	return lipgloss.NewStyle().Foreground(colorText).Render(view)
 }
 
 func (m Model) header(w int) string {
@@ -124,7 +125,7 @@ func (m Model) body(w int) string {
 
 func (m Model) aboutBody(w int) string {
 	var sb strings.Builder
-	sb.WriteString(lipgloss.NewStyle().Width(w).Render(content.Title))
+	sb.WriteString(lipgloss.NewStyle().Width(w).Foreground(colorAccent).Render(content.Title))
 	sb.WriteString("\n\n")
 
 	sb.WriteString(content.About)

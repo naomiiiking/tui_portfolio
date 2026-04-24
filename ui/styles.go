@@ -3,7 +3,8 @@ package ui
 import "github.com/charmbracelet/lipgloss"
 
 var (
-	colorAccent = lipgloss.AdaptiveColor{Light: "#6D28D9", Dark: "#A78BFA"}
+	colorText   = lipgloss.AdaptiveColor{Light: "#111827", Dark: "#c72c41"}
+	colorAccent = lipgloss.AdaptiveColor{Light: "#6D28D9", Dark: "#dedede"}
 	colorMuted  = lipgloss.AdaptiveColor{Light: "#6B7280", Dark: "#6B7280"}
 	colorDim    = lipgloss.AdaptiveColor{Light: "#D1D5DB", Dark: "#374151"}
 
@@ -27,4 +28,5 @@ var (
 	labelStyle = lipgloss.NewStyle().
 			Bold(true).
 			Foreground(colorAccent)
+
 )
