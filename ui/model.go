@@ -124,7 +124,10 @@ func (m Model) body(w int) string {
 
 func (m Model) aboutBody(w int) string {
 	var sb strings.Builder
-	sb.WriteString(lipgloss.NewStyle().Width(w).Render(content.About))
+	sb.WriteString(lipgloss.NewStyle().Width(w).Render(content.Title))
+	sb.WriteString("\n\n")
+
+	sb.WriteString(content.About)
 	sb.WriteString("\n\n")
 
 	sb.WriteString(labelStyle.Render("EXPERIENCE") + "\n")

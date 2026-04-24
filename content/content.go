@@ -2,9 +2,23 @@ package content
 
 import "strings"
 
-// Name is shown in the header on every screen.
-const Name = "naomi king"
+const Name = "NAOMIKING.SSH"
 
+const Title = `
+     __        *             _                 *     
+  /\ \ \__ _  ___  _ __ ___ (_)       *  _         *    
+ /  \/ / _` |/ _ \| '_ ` _ \| |     /\ /(_)_ __   __ _ 
+/ /\  / (_| | (_) | | | | | | |    / //_/ | '_ \ / _` |
+\_\ \/ \__,_|\___/|_| |_| |_|_|   / __ \| | | | | (_| |
+	    *					*     \/  \/|_|_| |_|\__, |
+				   *					*		  |___/ 
+`
+       _             
+  /\ /(_)_ __   __ _
+ / //_/ | '_ \ / _` |
+/ __ \| | | | | (_| |
+\/  \/|_|_| |_|\__, |
+			    |___/ 
 // About is your bio. Use \n for paragraph breaks.
 const About = `Founding engineer for the AI Solutions team at Goodnotes. Modernising workflows and building internal, AI native applications for engineers, designers, insights and more.`
 
@@ -23,8 +37,8 @@ var Experience = []Job{
 		Period:   "2025 – present",
 		Location: "London, UK",
 		Bullets: []string{
-			"Something you built or led",
-			"Another thing worth mentioning",
+			"Replaced over $100k (py) worth of third party services with custom, in house, AI native applications.",
+			"Lead org wide AI adoption sessions, driving ethical and productive AI use",
 		},
 	},
 }
