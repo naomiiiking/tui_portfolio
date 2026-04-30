@@ -53,7 +53,7 @@ var Skills = []Skill{
 		Title: "AI Development",
 		Examples: []string{
 			"LLMs: Fine tuning, orchestration, deployment, Ollama, Hugging Face",
-			"AI Frameworks: Langraph, AI SDK, Claude/OpenAI SDK",
+			"AI Frameworks: Langraph, Langchain, AI SDK, Claude/OpenAI SDK",
 			"RAG: Vector search pipelines with Chroma, FAISS, PGVector, AWS Bedrock",
 			"MCP: RBAC tool usage through OAuth 2 and OIDC",
 			"ML: Sckitlearn, PyTorch",
@@ -62,7 +62,7 @@ var Skills = []Skill{
 	{
 		Title: "Software engineering",
 		Examples: []string{
-			"Programming: Python, Typescript, Go, SQL",
+			"Programming: Python, Typescript, Go, SQL, currently learning Rust",
 			"Servers: Express.js, Bun",
 			"Chat: ChatSDK, Bolt",
 			"Integrations: Fast API, webhooks",
