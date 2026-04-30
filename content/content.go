@@ -12,10 +12,9 @@ const Title =
 \_\ \/ \__,_|\___/|_| |_| |_|_|   / __ \| | | | | (_| |
 	    *					*    \/  \/|_|_| |_|\__, |
 				   *					*		 |___/ `
-// About is your bio. Use \n for paragraph breaks.
-const About = `Founding engineer for the AI Solutions team at Goodnotes. Modernising workflows and building internal, AI native applications for engineers, designers, insights and more. Not currently looking for work, but to expand my network with like minded women in STEM and AI Engineers in London.
+const About = `Founding engineer for the AI Solutions team at Goodnotes. Modernising workflows and building internal, AI native applications for engineers, designers, insights and more. Not currently looking for work, but to expand my network with like minded women in STEM and AI Engineers in London.`
 
-// Job is one entry in your work history.
+
 type Job struct {
 	Title    string
 	Company  string
@@ -29,10 +28,18 @@ var Experience = []Job{
 		Company:  "Goodnotes",
 		Period:   "2025 – present",
 		Location: "London, UK",
-		Bullets: []string{
-			"Replaced over $100k (py) worth of third party services with custom, in house, AI native applications.",
-			"Lead org wide AI adoption sessions, driving ethical and productive AI use",
-		},
+	},
+	{
+		Title:    "Customer Support Engineer",
+		Company:  "Goodnotes",
+		Period:   "2024 – 2025",
+		Location: "London, UK",
+	},
+	{
+		Title:    "Technical Expert",
+		Company:  "Apple",
+		Period:   "2021 – 2024",
+		Location: "Brisbane, Australia",
 	},
 }
 
@@ -45,7 +52,7 @@ var Skills = []Skill{
 	{
 		Title: "AI Development",
 		Examples: []string{
-			"LLMs: Fine tuning, orchestration, deployment locally and on cloud, Ollama, Hugging Face",
+			"LLMs: Fine tuning, orchestration, deployment, Ollama, Hugging Face",
 			"AI Frameworks: Langraph, AI SDK, Claude/OpenAI SDK",
 			"RAG: Vector search pipelines with Chroma, FAISS, PGVector, AWS Bedrock",
 			"MCP: RBAC tool usage through OAuth 2 and OIDC",
@@ -84,6 +91,9 @@ var Links = []Link{
 
 const rawPortrait = 
 `......................................................................
+.......................................................................
+.......................................................................
+.......................................................................
 .......................................................................
 .......................................................................
 .........................--.    .......................................
