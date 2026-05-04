@@ -18,7 +18,7 @@ const (
 	sectionCount
 )
 
-var sectionNames = []string{"about", "projects", "links"}
+var sectionNames = []string{"about", "projects (WIP)", "links"}
 
 // Model is the root Bubbletea model.
 type Model struct {
@@ -160,17 +160,14 @@ func (m Model) aboutBody(w int) string {
 // Experience page todo: rebrand to projects
 func (m Model) experienceBody(w int) string {
 	var sb strings.Builder
-	for i, job := range content.Experience {
+	for i, project := range content.Projects {
 		if i > 0 {
 			sb.WriteString("\n")
 		}
-		sb.WriteString(labelStyle.Render(job.Title) + "\n")
-		sb.WriteString(hintStyle.Render(
-			fmt.Sprintf("%s  ·  %s  ·  %s", job.Company, job.Period, job.Location),
-		) + "\n")
-		for _, b := range job.Bullets {
-			sb.WriteString("  · " + b + "\n")
-		}
+		sb.WriteString(labelStyle.Render(project.Title) + "\n")
+		sb.WriteString(hintStyle.Render(project.Description) + "\n")
+		sb.WriteString(hintStyle.Render(project.Link) + "\n")
+
 	}
 	return lipgloss.NewStyle().Width(w).Render(sb.String())
 }
